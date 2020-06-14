@@ -60,7 +60,7 @@ class MicroServiceWidget extends StatelessWidget {
                     dio.options.headers["authorization"] = GlobalData.token;
                     print(dio.options.headers["authorization"]);
                     Response response;
-                    response = await dio.get("http://192.168.1.112:8080/microService/dateMicroService");
+                    response = await dio.get("http://192.168.1.112:8080/microService/primaryService");
                     String content = response.data.toString();
                     showMyMaterialDialog(context, content);
                   },
@@ -80,72 +80,16 @@ class MicroServiceWidget extends StatelessWidget {
                     dio.options.headers["authorization"] = GlobalData.token;
                     print(dio.options.headers["authorization"]);
                     Response response;
-                    response = await dio.get("http://192.168.1.112:8080/microService/oilPriceMicroService");
+                    response = await dio.get("http://192.168.1.112:8080/microService/seniorService");
+//                    print(response.headers["mState"]);
                     String content = response.data.toString();
+                    if (content == ""){
+                      content = "调用服务失败";
+                    }
                     showMyMaterialDialog(context, content);
                   },
                 ),
               ),
-//              Container(
-//                width: 200,
-//                child: RaisedButton(
-//                  color: Colors.blue,
-//                  highlightColor: Colors.blue[700],
-//                  colorBrightness: Brightness.dark,
-//                  splashColor: Colors.grey,
-//                  child: Text("查询美国当前人口数目"),
-//
-//                  shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-//                  onPressed: () async {
-//                    dio.options.headers["authorization"] = GlobalData.token;
-//                    print(dio.options.headers["authorization"]);
-//                    Response response;
-//                    response = await dio.get("http://192.168.1.112:8080/microService/populationService");
-//                    String content = response.data.toString();
-//                    showMyMaterialDialog(context, content);
-//                  },
-//                ),
-//              ),
-//              Container(
-//                width: 200,
-//                child: RaisedButton(
-//                  color: Colors.blue,
-//                  highlightColor: Colors.blue[700],
-//                  colorBrightness: Brightness.dark,
-//                  splashColor: Colors.grey,
-//                  child: Text("启动网络DDOS攻击"),
-//
-//                  shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-//                  onPressed: ()  async {
-//                    dio.options.headers["authorization"] = GlobalData.token;
-//                    print(dio.options.headers["authorization"]);
-//                    Response response;
-//                    response = await dio.get("http://192.168.1.112:8080/microService/DDosAttackService");
-//                    String content = response.data.toString();
-//                    showMyMaterialDialog(context, content);
-//                  },
-//                ),
-//              ),
-//              Container(
-//                width: 200,
-//                child: RaisedButton(
-//                  color: Colors.blue,
-//                  highlightColor: Colors.blue[700],
-//                  colorBrightness: Brightness.dark,
-//                  splashColor: Colors.grey,
-//                  child: Text("启动天网自动打击系统"),
-//
-//                  shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-//                  onPressed: () async {
-//                    dio.options.headers["authorization"] = GlobalData.token;
-//                    print(dio.options.headers["authorization"]);
-//                    Response response;
-//                    response = await dio.get("http://192.168.1.112:8080/microService/SkyNetService");
-//                    String content = response.data.toString();
-//                    showMyMaterialDialog(context, content);
-//                  },
-//                ),
-//              ),
             ],
           ),
         )
