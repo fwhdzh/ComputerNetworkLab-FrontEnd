@@ -17,7 +17,7 @@ class LoginWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("New route"),
+        title: Text("登录"),
       ),
       body: Center(
           child: Column(
