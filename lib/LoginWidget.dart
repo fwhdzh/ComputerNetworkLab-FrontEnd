@@ -17,7 +17,7 @@ class LoginWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("New route"),
+        title: Text("登录"),
       ),
       body: Center(
           child: Column(
@@ -74,10 +74,9 @@ class LoginWidget extends StatelessWidget {
                       child: Text("登录"),
                       shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
                       onPressed: () async {
-
                         Response response;
-//                      response = await dio.get("http://192.168.1.112:8080/getAll");
-                        response = await dio.post("http://192.168.1.112:8080/login", data: {"username": accountController.text, "password": secretController.text});
+                        response = await dio.post("http://192.168.1.112:8080/login",
+                            data: {"username": accountController.text, "password": secretController.text});
                         GlobalData.token = response.data.toString();
                         Navigator.push( context,
                             MaterialPageRoute(builder: (context) {

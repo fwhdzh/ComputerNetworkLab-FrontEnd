@@ -62,6 +62,7 @@ class MicroServiceWidget extends StatelessWidget {
                     Response response;
                     response = await dio.get("http://192.168.1.112:8080/microService/dateMicroService");
                     String content = response.data.toString();
+                    if (content == null || content == "") content = "服务调用失败";
                     showMyMaterialDialog(context, content);
                   },
                 ),
@@ -82,6 +83,9 @@ class MicroServiceWidget extends StatelessWidget {
                     Response response;
                     response = await dio.get("http://192.168.1.112:8080/microService/oilPriceMicroService");
                     String content = response.data.toString();
+                    if (content == null || content == "") {
+                      content = "微服务调用失败";
+                    }
                     showMyMaterialDialog(context, content);
                   },
                 ),
@@ -102,6 +106,9 @@ class MicroServiceWidget extends StatelessWidget {
                     Response response;
                     response = await dio.get("http://192.168.1.112:8080/microService/populationService");
                     String content = response.data.toString();
+                    if (content == null || content == "") {
+                      content = "微服务调用失败";
+                    }
                     showMyMaterialDialog(context, content);
                   },
                 ),
@@ -122,6 +129,9 @@ class MicroServiceWidget extends StatelessWidget {
                     Response response;
                     response = await dio.get("http://192.168.1.112:8080/microService/DDosAttackService");
                     String content = response.data.toString();
+                    if (content == null || content == "") {
+                      content = "微服务调用失败";
+                    }
                     showMyMaterialDialog(context, content);
                   },
                 ),
@@ -142,6 +152,9 @@ class MicroServiceWidget extends StatelessWidget {
                     Response response;
                     response = await dio.get("http://192.168.1.112:8080/microService/SkyNetService");
                     String content = response.data.toString();
+                    if (content == null || content == "") {
+                      content = "微服务调用失败";
+                    }
                     showMyMaterialDialog(context, content);
                   },
                 ),

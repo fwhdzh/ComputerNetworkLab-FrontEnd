@@ -71,7 +71,7 @@ class RegisterWidget extends StatelessWidget {
                             "username": accountController.text,
                             "password": secretController.text,
                             "roles": [0]});
-                          GlobalData.token = response.data.toString();
+//                          GlobalData.token = response.data.toString();
                           Navigator.push( context,
                               MaterialPageRoute(builder: (context) {
                                 return LoginWidget();
@@ -96,7 +96,7 @@ class RegisterWidget extends StatelessWidget {
                           "username": accountController.text,
                           "password": secretController.text,
                           "roles": [0,1]});
-                        GlobalData.token = response.data.toString();
+//                        GlobalData.token = response.data.toString();
                         Navigator.push( context,
                             MaterialPageRoute(builder: (context) {
                               return LoginWidget();
